@@ -25,3 +25,7 @@ En un laboratorio con cliente automatizado de protocolo Bedrock 1.26.60, Geyser 
 Los élitros conservan su comportamiento normal pero actualmente no muestran la mochila: Geyser utiliza el identificador vanilla para conservar el vuelo. La pechera de cobre tampoco está cubierta. No se crean entidades de seguimiento.
 
 Referencias: [mapeos de Geyser](https://geysermc.org/wiki/geyser/custom-items/), [packs de Geyser](https://geysermc.org/wiki/geyser/packs/), [modelos attachable de Bedrock](https://learn.microsoft.com/en-us/minecraft/creator/documents/attachables?view=minecraft-bedrock-stable), [GliderUtils de Geyser](https://github.com/GeyserMC/Geyser/blob/cb04ea8afe63e76b7c8219810faa47534bf7f2fc/core/src/main/java/org/geysermc/geyser/util/GliderUtils.java).
+
+## Marcador de casilla para Bedrock: prototipo adicional
+
+`packs/DanusMochilas-Casilla-Bedrock-EXPERIMENTAL.mcpack` contiene una modificación visual pequeña del panel de inventario clásico basada en el panel común de Bedrock 1.26.60. Se comprobó que Geyser ofrece el pack a un cliente de protocolo simulado; **no se ha comprobado visualmente ni se ha demostrado que la interacción, las coordenadas o la interfaz táctil funcionen**. No instalar en producción ni combinar sin revisar otros packs de interfaz. El paquete no muestra la mochila en 3D ni cambia los objetos del jugador.
