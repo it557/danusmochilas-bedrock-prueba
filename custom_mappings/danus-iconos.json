@@ -1,0 +1,51 @@
+{
+  "format_version": 2,
+  "items": {
+    "minecraft:brown_dye": [
+      {
+        "type": "definition",
+        "model": "minecraft:backpack_tier1",
+        "bedrock_identifier": "danusmochilas:tier1",
+        "bedrock_options": {
+          "icon": "danusmochilas_tier1"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1
+        }
+      },
+      {
+        "type": "definition",
+        "model": "minecraft:backpack_tier2",
+        "bedrock_identifier": "danusmochilas:tier2",
+        "bedrock_options": {
+          "icon": "danusmochilas_tier2"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1
+        }
+      },
+      {
+        "type": "definition",
+        "model": "minecraft:backpack_tier3",
+        "bedrock_identifier": "danusmochilas:tier3",
+        "bedrock_options": {
+          "icon": "danusmochilas_tier3"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1
+        }
+      },
+      {
+        "type": "definition",
+        "model": "minecraft:backpack_tier4",
+        "bedrock_identifier": "danusmochilas:tier4",
+        "bedrock_options": {
+          "icon": "danusmochilas_tier4"
+        },
+        "components": {
+          "minecraft:max_stack_size": 1
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "format_version": 2,
+  "items": {
+    "minecraft:leather_chestplate": [
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_tier1",
+        "bedrock_identifier": "danusmochilas:visual_tier1",
+        "bedrock_options": {
+          "icon": "leather_chestplate"
+        }
+      },
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_tier2",
+        "bedrock_identifier": "danusmochilas:visual_tier2",
+        "bedrock_options": {
+          "icon": "leather_chestplate"
+        }
+      },
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_tier3",
+        "bedrock_identifier": "danusmochilas:visual_tier3",
+        "bedrock_options": {
+          "icon": "leather_chestplate"
+        }
+      },
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_tier4",
+        "bedrock_identifier": "danusmochilas:visual_tier4",
+        "bedrock_options": {
+          "icon": "leather_chestplate"
+        }
+      },
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_leather_tier1",
+        "bedrock_identifier": "danusmochilas:visual_leather_tier1",
+        "bedrock_options": {
+          "icon": "leather_chestplate"
+        }
+      },
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_leather_tier2",
+        "bedrock_identifier": "danusmochilas:visual_leather_tier2",
+        "bedrock_options": {
+          "icon": "leather_chestplate"
+        }
+      },
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_leather_tier3",
+        "bedrock_identifier": "danusmochilas:visual_leather_tier3",
+        "bedrock_options": {
+          "icon": "leather_chestplate"
+        }
+      },
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_leather_tier4",
+        "bedrock_identifier": "danusmochilas:visual_leather_tier4",
+        "bedrock_options": {
+          "icon": "leather_chestplate"
+        }
+      }
+    ],
+    "minecraft:chainmail_chestplate": [
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_chainmail_tier1",
+        "bedrock_identifier": "danusmochilas:visual_chainmail_tier1",
+        "bedrock_options": {
+          "icon": "chainmail_chestplate"
+        }
+      },
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_chainmail_tier2",
+        "bedrock_identifier": "danusmochilas:visual_chainmail_tier2",
+        "bedrock_options": {
+          "icon": "chainmail_chestplate"
+        }
+      },
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_chainmail_tier3",
+        "bedrock_identifier": "danusmochilas:visual_chainmail_tier3",
+        "bedrock_options": {
+          "icon": "chainmail_chestplate"
+        }
+      },
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_chainmail_tier4",
+        "bedrock_identifier": "danusmochilas:visual_chainmail_tier4",
+        "bedrock_options": {
+          "icon": "chainmail_chestplate"
+        }
+      }
+    ],
+    "minecraft:golden_chestplate": [
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_gold_tier1",
+        "bedrock_identifier": "danusmochilas:visual_gold_tier1",
+        "bedrock_options": {
+          "icon": "golden_chestplate"
+        }
+      },
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_gold_tier2",
+        "bedrock_identifier": "danusmochilas:visual_gold_tier2",
+        "bedrock_options": {
+          "icon": "golden_chestplate"
+        }
+      },
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_gold_tier3",
+        "bedrock_identifier": "danusmochilas:visual_gold_tier3",
+        "bedrock_options": {
+          "icon": "golden_chestplate"
+        }
+      },
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_gold_tier4",
+        "bedrock_identifier": "danusmochilas:visual_gold_tier4",
+        "bedrock_options": {
+          "icon": "golden_chestplate"
+        }
+      }
+    ],
+    "minecraft:iron_chestplate": [
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_iron_tier1",
+        "bedrock_identifier": "danusmochilas:visual_iron_tier1",
+        "bedrock_options": {
+          "icon": "iron_chestplate"
+        }
+      },
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_iron_tier2",
+        "bedrock_identifier": "danusmochilas:visual_iron_tier2",
+        "bedrock_options": {
+          "icon": "iron_chestplate"
+        }
+      },
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_iron_tier3",
+        "bedrock_identifier": "danusmochilas:visual_iron_tier3",
+        "bedrock_options": {
+          "icon": "iron_chestplate"
+        }
+      },
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_iron_tier4",
+        "bedrock_identifier": "danusmochilas:visual_iron_tier4",
+        "bedrock_options": {
+          "icon": "iron_chestplate"
+        }
+      }
+    ],
+    "minecraft:diamond_chestplate": [
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_diamond_tier1",
+        "bedrock_identifier": "danusmochilas:visual_diamond_tier1",
+        "bedrock_options": {
+          "icon": "diamond_chestplate"
+        }
+      },
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_diamond_tier2",
+        "bedrock_identifier": "danusmochilas:visual_diamond_tier2",
+        "bedrock_options": {
+          "icon": "diamond_chestplate"
+        }
+      },
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_diamond_tier3",
+        "bedrock_identifier": "danusmochilas:visual_diamond_tier3",
+        "bedrock_options": {
+          "icon": "diamond_chestplate"
+        }
+      },
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_diamond_tier4",
+        "bedrock_identifier": "danusmochilas:visual_diamond_tier4",
+        "bedrock_options": {
+          "icon": "diamond_chestplate"
+        }
+      }
+    ],
+    "minecraft:netherite_chestplate": [
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_netherite_tier1",
+        "bedrock_identifier": "danusmochilas:visual_netherite_tier1",
+        "bedrock_options": {
+          "icon": "netherite_chestplate"
+        }
+      },
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_netherite_tier2",
+        "bedrock_identifier": "danusmochilas:visual_netherite_tier2",
+        "bedrock_options": {
+          "icon": "netherite_chestplate"
+        }
+      },
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_netherite_tier3",
+        "bedrock_identifier": "danusmochilas:visual_netherite_tier3",
+        "bedrock_options": {
+          "icon": "netherite_chestplate"
+        }
+      },
+      {
+        "type": "definition",
+        "model": "danusmochilas:render_netherite_tier4",
+        "bedrock_identifier": "danusmochilas:visual_netherite_tier4",
+        "bedrock_options": {
+          "icon": "netherite_chestplate"
+        }
+      }
+    ]
+  }
+}
