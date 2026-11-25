@@ -29,3 +29,18 @@ Referencias: [mapeos de Geyser](https://geysermc.org/wiki/geyser/custom-items/),
 ## Marcador de casilla para Bedrock: prototipo adicional
 
 `packs/DanusMochilas-Casilla-Bedrock-EXPERIMENTAL.mcpack` contiene una modificación visual pequeña del panel de inventario clásico basada en el panel común de Bedrock 1.26.60. Se comprobó que Geyser ofrece el pack a un cliente de protocolo simulado; **no se ha comprobado visualmente ni se ha demostrado que la interacción, las coordenadas o la interfaz táctil funcionen**. No instalar en producción ni combinar sin revisar otros packs de interfaz. El paquete no muestra la mochila en 3D ni cambia los objetos del jugador.
+
+## Candidato para mano 3D y casilla amarilla
+
+El pack de iconos en producción solo cambia el dibujo de los cuatro objetos. Este candidato conserva los iconos y añade cuatro modelos para la mano en primera y tercera persona. La casilla amarilla se entrega aparte para probar la interfaz clásica y táctil de Bedrock 1.26.60 por separado. El marco es decorativo: señala la primera casilla de la fila superior del inventario principal de Survival (índice 9 del backend), sin cambiar el botón, el desplazamiento ni el almacenamiento. La posición del marco debe confirmarse en ambos perfiles de interfaz.
+
+Para probar en un proxy aislado:
+
+1. Sustituye el pack de iconos anterior por `packs/DanusMochilas-Mano-3D-CANDIDATO.mcpack`. Conserva `custom_mappings/danus-iconos.json`. El pack nuevo usa el mismo UUID que el pack de iconos publicado y una versión superior, por lo que debe haber solo uno de los dos. Reinicia el proxy de pruebas y reconecta.
+2. Añade `packs/DanusMochilas-Casilla-CANDIDATO.mcpack` por separado. Si el proxy ya tiene el prototipo de la casilla, sustitúyelo. Comprueba que no choque con otros archivos JSON de interfaz y que se pueda mover la mochila y otros objetos con ratón, táctil y mando. Comprueba otras pantallas de inventario y cofres.
+3. Para probar la espalda, añade también `packs/DanusMochilas-3D-EXPERIMENTAL.mcpack` y `custom_mappings/danus-visual.json`. Verifica que el backend reconozca la sesión por Floodgate y entonces configura `bedrock-visual.enabled: true` en el backend de prueba. Empieza con `bedrock-visual.show-with-equipment: false` y con el torso vacío. Pon la mochila en la primera casilla de la fila superior del inventario (fuera de la barra rápida) y comprueba la espalda en tercera persona y desde otra cuenta. Es el mismo equipamiento virtual que en el prototipo y no necesita entidades. Para armaduras, prueba la otra opción aparte. El aspecto con élitros sigue fuera de cobertura.
+4. Comprueba los cuatro niveles, primera y tercera persona, inventario con mochila nueva y antigua, guardar y recuperar contenido, y la coexistencia de clientes Java. Guarda capturas. Si falla la interfaz, retira solo el pack de la casilla. Si falla el modelo de la mano, restaura el pack de iconos anterior. Si falla la espalda, desactiva el ajuste de backend y retira el pack y su mapeo.
+
+Generación reproducible desde los assets originales: `python tools/build_visual_packs.py`.
+
+El cliente automatizado puede comprobar qué pack anuncia Geyser y qué objetos traduce. La orientación, tamaño, posición y apariencia de los modelos y del marco requieren un cliente que renderice imágenes.
