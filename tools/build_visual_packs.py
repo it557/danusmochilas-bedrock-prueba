@@ -71,8 +71,12 @@ def build_held():
 
 def build_marker():
     files = load_pack("DanusMochilas-Casilla-Bedrock-EXPERIMENTAL.mcpack")
-    update_manifest(files, [0, 2, 0], "Marco amarillo de la mochila para inventarios clasico y tactil")
+    update_manifest(files, [0, 2, 1], "Marco amarillo de la mochila para inventarios clasico y tactil")
     classic = json.loads(files["ui/ui_common.json"])
+    operation = classic["inventory_panel"]["modifications"][0]
+    operation["operation"] = "insert_back"
+    operation["value"][0]["danus_slot_marker"]["layer"] = 8
+    files["ui/ui_common.json"] = encode(classic)
     # Both decorations are images. The vanilla grid retains every input and its slot indices.
     marker = deepcopy(classic["inventory_panel"]["modifications"][0]["value"][0])
     mobile = marker["danus_slot_marker"]
@@ -85,6 +89,47 @@ def build_marker():
     })
     write_pack("DanusMochilas-Casilla-CANDIDATO.mcpack", files)
 
+def build_back():
+    files = load_pack("DanusMochilas-3D-EXPERIMENTAL.mcpack")
+    previous = json.loads(files["manifest.json"])["header"]["version"]
+    update_manifest(files, [previous[0], previous[1], previous[2] + 1], "Mochila posterior alineada con el torso")
+    for tier in range(1, 5):
+        path = f"models/entity/back_tier{tier}.geo.json"
+        model = json.loads(files[path])
+        geometry = model["minecraft:geometry"][0]
+        body, backpack = geometry["bones"]
+        body["pivot"] = [0, 24, 0]
+        backpack.pop("binding", None)
+        backpack["pivot"] = [0, 24, 0]
+        cubes = backpack["cubes"]
+        bottom = min(c["origin"][1] for c in cubes)
+        top = max(c["origin"][1] + c["size"][1] for c in cubes)
+        front = max(c["origin"][2] + c["size"][2] for c in cubes)
+        # Player torso spans y=12..24. Its back is positive Z. The Java
+        # pocket faces negative Z, so turn both horizontal axes 180 degrees.
+        scale = min(0.85, 10.5 / (top - bottom))
+        for cube in cubes:
+            x, y, z = cube["origin"]
+            width, height, depth = cube["size"]
+            cube["origin"] = [round((-x-width)*scale, 4),
+                              round(12.5+(y-bottom)*scale, 4),
+                              round(2.6+(front-z-depth)*scale, 4)]
+            cube["size"] = [round(value*scale, 4) for value in (width, height, depth)]
+            faces = cube["uv"]
+            for a, b in (("north", "south"), ("west", "east")):
+                if a in faces and b in faces:
+                    faces[a], faces[b] = faces[b], faces[a]
+            for direction in ("up", "down"):
+                if direction in faces:
+                    face = faces[direction]
+                    face["uv"] = [a+b for a,b in zip(face["uv"], face["uv_size"])]
+                    face["uv_size"] = [-value for value in face["uv_size"]]
+        assert all(c["origin"][2] >= 2.6 and 12 <= c["origin"][1] <= 24
+                   and c["origin"][1] + c["size"][1] <= 24 for c in cubes)
+        files[path] = encode(model)
+    write_pack("DanusMochilas-Espalda-CANDIDATO.mcpack", files)
+
 if __name__ == "__main__":
     build_held()
     build_marker()
+    build_back()
