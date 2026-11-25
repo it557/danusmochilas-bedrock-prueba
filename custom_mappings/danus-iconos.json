@@ -7,7 +7,8 @@
         "model": "minecraft:backpack_tier1",
         "bedrock_identifier": "danusmochilas:tier1",
         "bedrock_options": {
-          "icon": "danusmochilas_tier1"
+          "icon": "danusmochilas_tier1",
+          "allow_offhand": false
         },
         "components": {
           "minecraft:max_stack_size": 1
@@ -18,7 +19,8 @@
         "model": "minecraft:backpack_tier2",
         "bedrock_identifier": "danusmochilas:tier2",
         "bedrock_options": {
-          "icon": "danusmochilas_tier2"
+          "icon": "danusmochilas_tier2",
+          "allow_offhand": false
         },
         "components": {
           "minecraft:max_stack_size": 1
@@ -29,7 +31,8 @@
         "model": "minecraft:backpack_tier3",
         "bedrock_identifier": "danusmochilas:tier3",
         "bedrock_options": {
-          "icon": "danusmochilas_tier3"
+          "icon": "danusmochilas_tier3",
+          "allow_offhand": false
         },
         "components": {
           "minecraft:max_stack_size": 1
@@ -40,7 +43,8 @@
         "model": "minecraft:backpack_tier4",
         "bedrock_identifier": "danusmochilas:tier4",
         "bedrock_options": {
-          "icon": "danusmochilas_tier4"
+          "icon": "danusmochilas_tier4",
+          "allow_offhand": false
         },
         "components": {
           "minecraft:max_stack_size": 1

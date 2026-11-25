@@ -71,20 +71,24 @@ def build_held():
 
 def build_marker():
     files = load_pack("DanusMochilas-Casilla-Bedrock-EXPERIMENTAL.mcpack")
-    update_manifest(files, [0, 2, 1], "Marco amarillo de la mochila para inventarios clasico y tactil")
-    classic = json.loads(files["ui/ui_common.json"])
-    operation = classic["inventory_panel"]["modifications"][0]
-    operation["operation"] = "insert_back"
-    operation["value"][0]["danus_slot_marker"]["layer"] = 8
-    files["ui/ui_common.json"] = encode(classic)
-    # Both decorations are images. The vanilla grid retains every input and its slot indices.
-    marker = deepcopy(classic["inventory_panel"]["modifications"][0]["value"][0])
-    mobile = marker["danus_slot_marker"]
-    mobile.update(anchor_from="top_left", anchor_to="top_left", offset=[0, 0])
+    update_manifest(files, [0, 2, 2], "Marco amarillo de la mochila para inventarios clasico y tactil")
+    legacy = json.loads(files.pop("ui/ui_common.json"))
+    classic_marker = legacy["inventory_panel"]["modifications"][0]["value"][0]
+    # The first cell is four 18px columns left of center and 57px above
+    # the hotbar center. The hotbar center is 14px above the root bottom.
+    classic_marker["danus_slot_marker"].update(layer=8, offset=[-72, -71])
+    files["ui/inventory_screen.json"] = encode({
+        "namespace": "crafting",
+        "player_inventory@common.root_panel": {
+            "modifications": [{"array_name": "controls", "operation": "insert_back", "value": [classic_marker]}],
+        },
+    })
+    pocket_marker = deepcopy(classic_marker)
+    pocket_marker["danus_slot_marker"].update(anchor_from="top_left", anchor_to="top_left", offset=[0, 0])
     files["ui/inventory_screen_pocket.json"] = encode({
         "namespace": "crafting_pocket",
         "survival_inventory_grid@crafting.scroll_grid_panel": {
-            "modifications": [{"array_name": "controls", "operation": "insert_back", "value": [marker]}],
+            "modifications": [{"array_name": "controls", "operation": "insert_back", "value": [pocket_marker]}],
         },
     })
     write_pack("DanusMochilas-Casilla-CANDIDATO.mcpack", files)
